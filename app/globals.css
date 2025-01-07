@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 255, 255, 255;
+    --foreground: 34, 34, 34;
+    --card: 255, 255, 255;
+    --card-foreground: 34, 34, 34;
+    --popover: 255, 255, 255;
+    --popover-foreground: 34, 34, 34;
+    --primary: 66, 133, 244;
+    --primary-foreground: 255, 255, 255;
+    --secondary: 52, 168, 83;
+    --secondary-foreground: 255, 255, 255;
+    --muted: 221, 221, 221;
+    --muted-foreground: 85, 85, 85;
+    --accent: 219, 68, 55;
+    --accent-foreground: 255, 255, 255;
+    --destructive: 219, 68, 55;
+    --destructive-foreground: 255, 255, 255;
+    --border: 204, 204, 204;
+    --input: 221, 221, 221;
+    --ring: 66, 133, 244;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 34, 34, 34;
+    --foreground: 255, 255, 255;
+    --card: 34, 34, 34;
+    --card-foreground: 255, 255, 255;
+    --popover: 34, 34, 34;
+    --popover-foreground: 255, 255, 255;
+    --primary: 66, 133, 244;
+    --primary-foreground: 255, 255, 255;
+    --secondary: 52, 168, 83;
+    --secondary-foreground: 255, 255, 255;
+    --muted: 85, 85, 85;
+    --muted-foreground: 221, 221, 221;
+    --accent: 219, 68, 55;
+    --accent-foreground: 255, 255, 255;
+    --destructive: 219, 68, 55;
+    --destructive-foreground: 255, 255, 255;
+    --border: 85, 85, 85;
+    --input: 85, 85, 85;
+    --ring: 66, 133, 244;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  .animate-scale {
+    animation: scale 0.4s ease-out forwards;
+  }
+
+  .gradient-bg {
+    @apply bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500;
+  }
+
+  .hero-gradient {
+    @apply bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600;
+  }
+
+  .link-underline {
+    @apply relative inline-block;
+  }
+  
+  .link-underline::before {
+    content: '';
+    @apply absolute left-0 bottom-0 w-full h-0.5 bg-green-400 scale-x-0 origin-left transition-transform duration-300 ease-out;
+  }
+
+  .link-underline:hover::before {
+    @apply scale-x-100;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.5), 0 0 10px rgba(59, 130, 246, 0.5);
+  }
+  to {
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.8), 0 0 20px rgba(59, 130, 246, 0.8);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scale {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
