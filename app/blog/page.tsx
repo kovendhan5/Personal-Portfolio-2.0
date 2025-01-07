@@ -1,5 +1,7 @@
+'use client'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import Link from "next/link"
+import { Suspense } from 'react'
 
 const blogPosts = [
   {
@@ -28,26 +30,27 @@ const blogPosts = [
   }
 ]
 
+
 export default function BlogPage() {
   return (
-    <div className="container mx-auto px-4 py-12">
-      <h1 className="text-4xl font-bold mb-8 text-center">Blog</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {blogPosts.map((post, index) => (
-          <Link href={`/blog/${post.slug}`} key={index}>
-            <Card className="h-full transition-transform hover:scale-105">
-              <CardHeader>
-                <CardTitle>{post.title}</CardTitle>
-                <CardDescription>{post.date}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p>{post.description}</p>
-              </CardContent>
-            </Card>
-          </Link>
-        ))}
+    <Suspense fallback={<div>Loading...</div>}>
+      <div className="min-h-screen flex flex-col items-center">
+        <div className="container mx-auto grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {blogPosts.map((post) => (
+            <Link key={post.slug} href={`/blog/${post.slug}`}>
+              <Card>
+                <CardHeader>
+                  <CardTitle>{post.title}</CardTitle>
+                  <CardDescription>{post.date}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p>{post.description}</p>
+                </CardContent>
+              </Card>
+            </Link>
+          ))}
+        </div>
       </div>
-    </div>
+    </Suspense>
   )
 }
-
