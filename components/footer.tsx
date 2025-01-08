@@ -1,4 +1,5 @@
-import { Github, Linkedin, Mail } from 'lucide-react'
+import { Github, Linkedin, Mail, Rocket } from 'lucide-react'
+import { Button } from "@/components/ui/button"
 
 export function Footer() {
   return (
@@ -10,15 +11,30 @@ export function Footer() {
           </p>
         </div>
         <div className="flex space-x-4">
-          <a href="https://github.com/kovendhan5" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-200 transition-colors">
-            <Github className="h-5 w-5" />
-          </a>
-          <a href="https://www.linkedin.com/in/kovendhan-p-7b6b80226/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-200 transition-colors">
-            <Linkedin className="h-5 w-5" />
-          </a>
-          <a href="mailto:kovendhanofficial5@gmail.com" className="text-white hover:text-gray-200 transition-colors">
-            <Mail className="h-5 w-5" />
-          </a>
+          <Button asChild variant="ghost" size="icon" className="text-white hover:text-gray-200 transition-colors">
+            <a href="https://github.com/kovendhan5" target="_blank" rel="noopener noreferrer">
+              <Github className="h-5 w-5" />
+              <span className="sr-only">GitHub</span>
+            </a>
+          </Button>
+          <Button asChild variant="ghost" size="icon" className="text-white hover:text-gray-200 transition-colors">
+            <a href="mailto:kovendhanofficial5@gmail.com">
+              <Mail className="h-5 w-5" />
+              <span className="sr-only">Contact</span>
+            </a>
+          </Button>
+          <Button asChild variant="ghost" size="icon" className="text-white hover:text-gray-200 transition-colors">
+            <a href="#projects">
+              <Rocket className="h-5 w-5" />
+              <span className="sr-only">Projects</span>
+            </a>
+          </Button>
+          <Button asChild variant="ghost" size="icon" className="text-white hover:text-gray-200 transition-colors">
+            <a href="https://www.linkedin.com/in/kovendhan-p-7b6b80226/" target="_blank" rel="noopener noreferrer">
+              <Linkedin className="h-5 w-5" />
+              <span className="sr-only">LinkedIn</span>
+            </a>
+          </Button>
         </div>
       </div>
     </footer>

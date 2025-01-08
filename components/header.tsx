@@ -32,15 +32,19 @@ export function Header() {
       label: "Home",
     },
     {
-      href: "#skills",
+      href: "/#about",
+      label: "About",
+    },
+    {
+      href: "/#skills",
       label: "Skills",
     },
     {
-      href: "#projects",
+      href: "/#projects",
       label: "Projects",
     },
     {
-      href: "#contact",
+      href: "/#contact",
       label: "Contact",
     },
   ]
@@ -80,11 +84,11 @@ export function Header() {
                 <Link
                   key={route.href}
                   href={route.href}
-                  className={
+                  className={`link-underline ${
                     pathname === route.href
                       ? "text-primary"
                       : "text-foreground/60 transition-colors hover:text-foreground"
-                  }
+                  }`}
                 >
                   {route.label}
                 </Link>
