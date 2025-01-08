@@ -15,14 +15,14 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'npm install'
-                sh 'npm run build'
+                bat 'npm install'
+                bat 'npm run build'
             }
         }
 
         stage('Test') {
             steps {
-                sh 'npm test'
+                bat 'npm test'
             }
         }
 
@@ -55,7 +55,7 @@ pipeline {
     post {
         always {
             // Clean up Docker images
-            sh "docker rmi ${DOCKER_IMAGE}:${DOCKER_TAG}"
+            bat "docker rmi ${DOCKER_IMAGE}:${DOCKER_TAG}"
         }
     }
 }
