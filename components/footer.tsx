@@ -1,5 +1,6 @@
-import { Github, Linkedin, Mail, Rocket } from 'lucide-react'
+"use client"
 import { Button } from "@/components/ui/button"
+import { Github, Linkedin, Mail, Rocket } from 'lucide-react'
 
 export function Footer() {
   return (
