@@ -796,12 +796,6 @@ video {
 .mb-12 {
   margin-bottom: 3rem;
 }
-.mb-4 {
-  margin-bottom: 1rem;
-}
-.mb-8 {
-  margin-bottom: 2rem;
-}
 .ml-1 {
   margin-left: 0.25rem;
 }
@@ -1668,10 +1662,6 @@ video {
   font-size: 1.875rem;
   line-height: 2.25rem;
 }
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-}
 .text-\[0\.8rem\] {
   font-size: 0.8rem;
 }
@@ -2139,12 +2129,6 @@ video {
 
 .focus-within\:z-20:focus-within {
   z-index: 20;
-}
-
-.hover\:scale-105:hover {
-  --tw-scale-x: 1.05;
-  --tw-scale-y: 1.05;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .hover\:bg-accent:hover {
