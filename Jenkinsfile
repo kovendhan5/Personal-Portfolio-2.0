@@ -37,7 +37,7 @@ pipeline {
         stage('Docker Push') {
             steps {
                 script {
-                    docker.withRegistry('https://your-docker-registry-url', 'docker-credentials-id') {
+                    docker.withRegistry('https://hub.docker.com/repository/docker/kovendhan5', 'docker-credentials-id') {
                         docker.image("${DOCKER_IMAGE}:${DOCKER_TAG}").push()
                     }
                 }
