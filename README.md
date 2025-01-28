@@ -1,4 +1,4 @@
-# site is currently undergoing maintenance. Please revisit us after some time to ensure the best experience.
+# This site is currently undergoing maintenance. Please revisit us after some time. until that read me file will be displayed.
 
 # Kovendhan's Portfolio
 
